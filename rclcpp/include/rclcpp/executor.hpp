@@ -530,6 +530,10 @@ protected:
   bool
   get_next_ready_executable(AnyExecutable & any_executable);
 
+  RCLCPP_PUBLIC
+  bool
+  get_next_ready_executable_custom(AnyExecutable & any_executable);
+
   /// Wait for executable in ready state and populate union structure.
   /**
    * If an executable is ready, it will return immediately, otherwise
@@ -546,6 +550,11 @@ protected:
   get_next_executable(
     AnyExecutable & any_executable,
     std::chrono::nanoseconds timeout = std::chrono::nanoseconds(-1));
+
+  RCLCPP_PUBLIC bool get_next_executable_custom(
+    AnyExecutable & any_executable,
+    std::chrono::nanoseconds timeout = std::chrono::nanoseconds(-1)
+  );
 
   /// This function triggers a recollect of all entities that are registered to the executor.
   /**

@@ -611,6 +611,12 @@ public:
     rclcpp::MessageInfo & message_info_out);
   // ===============================================================================================
 
+  RCLCPP_PUBLIC
+  rclcpp::node_interfaces::NodeBaseInterface * 
+  get_node_base() {
+    return node_base_;
+  }
+
 protected:
   template<typename EventCallbackT>
   void

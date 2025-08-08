@@ -38,7 +38,7 @@ SingleThreadedExecutor::spin()
 
   while (rclcpp::ok(this->context_) && spinning.load()) {
     rclcpp::AnyExecutable any_executable;
-    if (get_next_executable(any_executable)) {
+    if (get_next_executable_custom(any_executable)) {
       execute_any_executable(any_executable);
     }
   }

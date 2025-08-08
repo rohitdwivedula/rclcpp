@@ -918,3 +918,5 @@ Executor::is_spinning()
 {
   return spinning;
 }
+
+#include "custom_executor.h"
